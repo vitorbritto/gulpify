@@ -2,7 +2,7 @@
 # -- GRUNTIFY -----------------------------------------------------------------------------------------
 #
 # Name       : Bootstrap for Gulpify
-# Descrition : simple program to start a bootstrap for Gruntify
+# Descrition : simple program to start a bootstrap for Gulpify
 # Version    : 0.1.0
 # Author     : Vitor Britto <code@vitorbritto.com.br> & Daniel Castro <dancasttro@gmail.com>
 #
@@ -31,7 +31,7 @@ VIEW   = app/index.html
 # Global Tasks
 global:
 	@echo " $(INFO) Installing Dependencies... please wait."
-	@npm install -q
+	@sudo npm install -q
 	@rm -rf makefile logo-gruntify.jpg README.md
 
 
@@ -68,4 +68,4 @@ init_current:
 
 	@mv * .[^.]* ..
 
-	@rm gruntify
+	@rm gulpify
