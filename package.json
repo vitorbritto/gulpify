@@ -5,17 +5,17 @@
   "homepage": "www.domain.com",
   "description": "Projct description goes here",
   "private": true,
-  "author": "Vitor Britto & Daniel Castro",
+  "author": "",
   "keywords": [
     "boilerplate",
     "grunt"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/vitorbritto/gruntify.git"
+    "url": "git://github.com/vitorbritto/gulpify.git"
   },
   "bugs": {
-    "url": "https://github.com/vitorbritto/gruntify/issues"
+    "url": "https://github.com/vitorbritto/gulpify/issues"
   },
   "engines": {
     "node": ">=0.10.0",
