@@ -1,27 +1,27 @@
-/******************************************************************
-4. JS TASKS
-   path: scr/js/*.js
-   save to: public/js/main.js
-   dependence: gulp-jshint, gulp-uglify, gulp-concat, gulp-rename
-*******************************************************************/
+///////////////////////////////////////////
+// SCRIPT TASK                           //
+///////////////////////////////////////////
 
-var gulp = require('gulp'),
-    config = require('../gulp.conf.js'),
-    uglify = require('gulp-uglify'),
-    jshint = require('gulp-jshint'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
+
+var gulp    = require('gulp'),
+    config  = require('../gulp.conf.js'),
+    uglify  = require('gulp-uglify'),
+    jshint  = require('gulp-jshint'),
+    rename  = require('gulp-rename'),
+    concat  = require('gulp-concat'),
     stylish = require('jshint-stylish');
 
-// lint my custom js
+// LINT SCRIPTS
 gulp.task(config.tasks.jslint, function() {
+
     return gulp.src(config.src.scripts)
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
         .pipe(gulp.dest(config.dist.scripts));
+
 });
 
-// minify all js files that shold not be concatinated
+// MINIFY AND CONCAT SCRIPTS
 gulp.task(config.tasks.jsmin, function() {
     return gulp.src(config.dist.scripts + 'main.js')
         .pipe(uglify())
@@ -29,11 +29,13 @@ gulp.task(config.tasks.jsmin, function() {
         .pipe(gulp.dest(config.dist.scripts));
 });
 
-// minify & concatinate all other js
+// MINIFY AND CONCAT OTHER SCRIPTS
 // gulp.task(config.tasks.jsconcat, function() {
+//
 //     gulp.src(config.paths.js)
 //         .pipe(concat('all.min.js'))
 //         .pipe(uglify())
 //         .pipe(rename({suffix: '.min'}))
 //         .pipe(gulp.dest(config.pathsMin.js));
+//
 // });

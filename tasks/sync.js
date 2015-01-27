@@ -1,15 +1,17 @@
-/**************************************************************
-5. BROWSER SYNC
-**************************************************************/
+///////////////////////////////////////////
+// SYNC TASK                             //
+///////////////////////////////////////////
 
-var gulp = require('gulp'),
-		config = require('../gulp.conf.js'),
-		browserSync = require('browser-sync');
+var gulp    = require('gulp'),
+    config  = require('../gulp.conf.js'),
+    sync    = require('browser-sync');
 
 gulp.task(config.tasks.browsersync, function() {
-    browserSync(config.syncConfig, function (err, bs) {
+
+    sync(config.syncConfig, function (err, bs) {
 	    if (!err) {
-	        console.log("BrowserSync is ready!");
+	        console.log('BrowserSync is ready!');
 	    }
 	});
+
 });
