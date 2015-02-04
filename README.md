@@ -28,7 +28,7 @@ $ make new
 # 4. Profit!
 ```
 
-**Existing Project (non Grunt project)**
+**Existing Project (non Gulp project)**
 
 ```bash
 # 1. Clone this repository (make sure to be inside your project directory)
@@ -52,67 +52,39 @@ The `gulp.conf.js` file contain all the necessary settings for your build proces
 // TASK CONFIG                           //
 ///////////////////////////////////////////
 
+'use strict';
+
 var pkg = require('./package');
 
 module.exports = {
 
-    // ---------------------------------------------------------------------------------------
     // INITIAL CONFIGURATION
-    // ---------------------------------------------------------------------------------------
-
-    // Setup
-    init: {
-
-        // Select a Template Engine     - OPTIONS: none, jade, handlebars
-        view: 'none',
-
-        // Select a preprocessor        - OPTIONS: none, compass, stylus, less
-        style: 'stylus',
-
-        // Select a JavaScript module   - OPTIONS: none, umd, requirejs, browserify
-        module: 'none',
-
-        // Select a deploy method       - OPTIONS: none, ftp-deploy, rsync
-        deploy: 'none',
-
-        // Select a unit test tool      - OPTIONS: none, mocha, jasmine, qunit
-        test: 'none',
-
-        // Would you like to use Karma?
-        karma: true,
-
-        // Select a development side   - OPTIONS: client, server, both
-        side: 'client'
-    },
 
     // Folders
-    modules: 'app/scripts/modules',
-    requires: 'app/scripts/requires',
+    modules     : 'app/scripts/modules',
+    requires    : 'app/scripts/requires',
     test: {
-        main:    'spec',
-        helpers: 'spec/helpers',
-        modules: 'spec/modules'
+        main    : 'spec',
+        helpers : 'spec/helpers',
+        modules : 'spec/modules'
     },
 
     src: {
         main    : 'src',
         styles  : 'src/styles/*.scss',
         scripts : 'src/scripts/*.js',
-        imgs    : 'src/imgs/*.{png,jpg,gif}',
+        images  : 'src/images/*.{png,jpg,gif}',
         fonts   : 'src/fonts'
     },
     dist: {
         main    : 'public',
         styles  : 'public/styles/',
         scripts : 'public/scripts/',
-        imgs    : 'public/imgs/*',
+        images  : 'public/images/*',
         fonts   : 'public/fonts/'
     },
 
-    // -------------------------------------------------------------------------------------
     // TASKS CONFIGURATION
-    // -------------------------------------------------------------------------------------
-
     tasks: {
         imagemin    : 'imagemin',
         jslint      : 'jslint',
@@ -122,21 +94,19 @@ module.exports = {
         cssmin      : 'cssmin',
         cssconcat   : 'cssconcat',
         html        : 'html',
-        imgs        : 'imgs',
+        images      : 'images',
         browsersync : 'browsersync',
         zip         : 'zip'
     },
 
-    // Browser Sync
     syncConfig: {
-        files: ['styles/*.css','scripts/*.js', 'public/*.html', 'public/imgs/*.{png,jpg,gif}'],
+        files: ['styles/*.css','scripts/*.js', 'public/*.html', 'public/images/*.{png,jpg,gif}'],
         server: {
             baseDir: 'public',
             index: 'index.html'
         }
     }
 }
-
 ```
 
 #### 2. Select Tasks
@@ -188,7 +158,7 @@ gulp.task(config.tasks.styles, function() {
 During install some of you may encounter some issues, most of this issues can be solved by one of the following tips.
 If you went through all this and still can't solve the issue, feel free to contact us via the repository issue tracker or the links provided below.
 
-#### Update NPM, Bower or Grunt
+#### Update NPM, Bower or Gulp
 
 Sometimes you may find there is a weird error during install like npm's *Error: ENOENT*, usually updating those tools to the latest version solves the issue.
 
@@ -197,9 +167,9 @@ Updating NPM:
 $ npm update -g npm
 ```
 
-Updating Grunt:
+Updating Gulp:
 ```
-$ npm update -g grunt-cli
+$ npm update gulp
 ```
 
 Updating Bower:
