@@ -52,7 +52,7 @@ init_new:
 	@echo "  / /_/ / /_/ / / /_/ / / __/ /_/ /   "
 	@echo "  \____/\__,_/_/ .___/_/_/  \__, /    "
 	@echo "              /_/          /____/     "
-	@echo " 									 "
+	@echo " 				     "
 
 
 	@echo " $(INFO) Scaffolding"
