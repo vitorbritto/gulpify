@@ -19,11 +19,12 @@ var gulp        = require('gulp'),
 
 gulp.task('build', [config.tasks.styles, config.tasks.cssmin, config.tasks.jsmin, config.tasks.imagemin,config.tasks.zip]);
 
-gulp.task('start', [config.tasks.styles, config.tasks.imagemin, config.tasks.jslint, config.tasks.browsersync]);
+gulp.task('start', [config.tasks.styles, config.tasks.imagemin, config.tasks.jslint, config.tasks.jadecompile, config.tasks.browsersync]);
 
 gulp.task('default', ['start'], function() {
     gulp.watch('src/styles/**/*.scss', [config.tasks.styles, reload]);
     gulp.watch(config.src.scripts, [config.tasks.jslint, reload]);
+    gulp.watch(config.src.views, [config.tasks.jadecompile, reload]);
     gulp.watch('src/images/*.{png,jpg,gif}', [config.tasks.imagemin, reload]);
     gulp.watch('public/*.html', reload);
 });

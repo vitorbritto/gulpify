@@ -20,11 +20,12 @@ module.exports = {
     },
 
     src: {
-        main    : 'src',
-        styles  : 'src/styles/*.scss',
-        scripts : 'src/scripts/*.js',
-        images  : 'src/images/*.{png,jpg,gif}',
-        fonts   : 'src/fonts'
+        main    : 'app',
+        views   : 'app/views/',
+        styles  : 'app/styles/*.scss',
+        scripts : 'app/scripts/*.js',
+        images  : 'app/images/*.{png,jpg,gif}',
+        fonts   : 'app/fonts'
     },
     dist: {
         main    : 'public',
@@ -46,7 +47,8 @@ module.exports = {
         html        : 'html',
         images      : 'images',
         browsersync : 'browsersync',
-        zip         : 'zip'
+        zip         : 'zip',
+        jadecompile : 'jadecompile'
     },
 
     syncConfig: {
